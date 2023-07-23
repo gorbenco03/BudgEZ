@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgEZ.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid BackgroundColor="#222831">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="260"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Path StrokeThickness="0"  
+              Stroke="transparent"  Data="m0,-41l575.37922,0l1.62079,260.8155c-188.82163,87 -326.83006,-46.00691 -577,17.29248l0,-278.10798z" Fill="#393E46"/>
+
+        <StackLayout>
+            <Frame BackgroundColor="#00ADB5" BorderColor="Transparent" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,120,0,0" HorizontalOptions="Center">
+                <Image Source="user.svg" Aspect="AspectFill" Margin="0" HeightRequest="40" WidthRequest="40"/>
+            </Frame>
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="1" Text="Welcome Back!" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" TextColor="#EEEEEE" Padding="0" Margin="0"/>
+            <Label Grid.Row="2" Text="Sign in to continue" HorizontalOptions="Center" TextColor="White"  FontSize="Subtitle"/>
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" WidthRequest="300" BorderColor="#71C9CE" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame HeightRequest="40" WidthRequest="40"  BackgroundColor="#00ADB5"  Padding="0" HorizontalOptions="Center" Margin="5" CornerRadius="30">
+                            <Image Source="user.svg" HeightRequest="20" Aspect="AspectFit" Margin="0"/>
+                        </Frame>
+                        <Entry x:Name="myUserName" Text="{Binding UserName}" Placeholder="Username" PlaceholderColor="#EEEEEE" TextColor="#EEEEEE" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  ></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="#71C9CE" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,5,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame HeightRequest="40" WidthRequest="40" BackgroundColor="#00ADB5"  Padding="0" HorizontalOptions="Center" Margin="5" CornerRadius="30">
+                            <Image Source="parola.svg" Aspect="AspectFit" HeightRequest="20" Margin="0"/>
+                        </Frame>
+                        <Entry x:Name="myPassword" Text="{Binding Password}" IsPassword="True" Placeholder="Password"  PlaceholderColor="#EEEEEE" TextColor="#EEEEEE"  FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="StartAndExpand"></Entry>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,0" Padding="0">
+                    <CheckBox Color="#71C9CE" Margin="0,20,0,0" IsChecked="False"/>
+                    <Label   Text="Remember Me" FontAttributes="Bold" TextColor="White" FontSize="Small" VerticalTextAlignment="Center"  Margin="0,20,0,0" HorizontalTextAlignment="Center"/>
+                    <Label Text="Forgot password?" FontAttributes="Bold" TextColor="White" FontSize ="Small" HorizontalOptions="EndAndExpand"  Margin="0,20,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <Button Text="SIGN IN" HeightRequest="50" WidthRequest="150" CornerRadius="30" BackgroundColor="#00ADB5" FontAttributes="Bold" Margin="0,45,0,0" Command="{Binding LoginCommand}" Clicked="Button_Clicked" ></Button>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
+                    <Label Text="New User?" TextColor="White"></Label>
+                    <Label Text="  Sign Up"  FontAttributes="Bold" TextColor="White"></Label>
+                </StackLayout>
+
+            </StackLayout>
+        </Grid>
+
+
+
+
+
+        </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Black}, Dark={DynamicResource White}}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontFamily" Value="OpenSansRegular"/>
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={DynamicResource Gray200}, Dark={DynamicResource Gray500}}" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray300}, Dark={DynamicResource Gray600}}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>
