@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BudgEZ"
+    xmlns:views="clr-namespace:BudgEZ.Views"
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
@@ -11,4 +12,12 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="MainPage" />
 
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems" >
+        <ShellContent Title="Home" ContentTemplate ="{DataTemplate views:HomePage}"></ShellContent>
+        <ShellContent Title="Tools" ContentTemplate ="{DataTemplate views:ToolsPage}"></ShellContent>
+        <ShellContent Title="Settings" ContentTemplate ="{DataTemplate views:SettingsPage}"></ShellContent>
+        
+    </FlyoutItem>
+    
 </Shell>

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BudgEZ.ViewModels;
+using BudgEZ.Views;
+using Microsoft.Extensions.Logging;
 
 namespace BudgEZ;
 
@@ -19,6 +21,12 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
+		builder.Services.AddSingleton<HomePage>();
+		builder.Services.AddSingleton<LoginPage>();
+		builder.Services.AddSingleton<LoginPageViewModel>();
+		builder.Services.AddSingleton<SettingsPage>();
+        builder.Services.AddSingleton<ToolsPage>();
+
+        return builder.Build();
 	}
 }

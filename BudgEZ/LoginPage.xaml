@@ -60,7 +60,7 @@
                     <Label Text="Forgot password?" FontAttributes="Bold" TextColor="White" FontSize ="Small" HorizontalOptions="EndAndExpand"  Margin="0,20,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                 </StackLayout>
 
-                <Button Text="SIGN IN" HeightRequest="50" WidthRequest="150" CornerRadius="30" BackgroundColor="#00ADB5" FontAttributes="Bold" Margin="0,45,0,0" Command="{Binding LoginCommand}" Clicked="Button_Clicked" ></Button>
+                <Button Text="SIGN IN" HeightRequest="50" WidthRequest="150" CornerRadius="30" BackgroundColor="#00ADB5" FontAttributes="Bold" Margin="0,45,0,0" Command="{Binding LoginCommand}" ></Button>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
                     <Label Text="New User?" TextColor="White"></Label>
                     <Label Text="  Sign Up"  FontAttributes="Bold" TextColor="White"></Label>

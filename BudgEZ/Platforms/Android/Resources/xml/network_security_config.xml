@@ -3,6 +3,7 @@
   <domain-config cleartextTrafficPermitted="true">
     <domain includeSudomains="true">10.0.2.2</domain>
     <domain includeSudomains="true">microsoft.com</domain>
-    <domain includeSudomains="true">192.168.1.184</domain>  
-</domain-config>
+    <domain includeSudomains="true">192.168.1.184</domain>
+    <domain includeSudomains="true"> 172.27.240.1</domain> 
+  </domain-config>
 </network-security-config>

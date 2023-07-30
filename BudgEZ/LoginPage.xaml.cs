@@ -1,19 +1,21 @@
 using BudgEZ.Models;
 using BudgEZ.Service;
+using BudgEZ.ViewModels;
 
 namespace BudgEZ;
 
 public partial class LoginPage : ContentPage
 {
-	readonly ILoginRepository _loginRepository = new LoginRepository(); 
+	//readonly ILoginRepository _loginRepository = new LoginRepository(); 
 
 
-	public LoginPage()
+	public LoginPage(LoginPageViewModel loginPageViewModel)
 	{
 		InitializeComponent();
+		this.BindingContext = loginPageViewModel;
 	}
 
-	private async void Button_Clicked(object sender, EventArgs e)
+	/*private async void Button_Clicked(object sender, EventArgs e)
 	{
 		{
 			string userName = myUserName.Text;
@@ -35,5 +37,5 @@ public partial class LoginPage : ContentPage
 
 
 		}
-	}
+	}*/
 }
