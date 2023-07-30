@@ -18,17 +18,17 @@ namespace BudgEZ.Service
 
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
-                    var userInfo = new List<UserInfo>();
+                    var userInfo = new UserInfo();
                     var client = new HttpClient();
                     string url = "http://172.27.240.1:8082/api/userinfoes/LoginUser/" + username + "/" + password;
                     client.BaseAddress = new Uri(url);
                     HttpResponseMessage response = await client.GetAsync("");
                     if (response.IsSuccessStatusCode)
                     {
-                        string content = response.Content.ReadAsStringAsync().Result;
-                        userInfo = JsonConvert.DeserializeObject<List<UserInfo>>(content);
-                        //   userInfo = await response.Content.ReadFromJsonAsync<UserInfo>();
-                        return await Task.FromResult(userInfo.FirstOrDefault());
+                        //string content = response.Content.ReadAsStringAsync().Result;
+                       // userInfo = JsonConvert.DeserializeObject<List<UserInfo>>(content);
+                          userInfo = await response.Content.ReadFromJsonAsync<UserInfo>();
+                        return await Task.FromResult(userInfo);
                     }
 
                     else

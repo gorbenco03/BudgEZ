@@ -5,19 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BudgEZ"
     xmlns:views="clr-namespace:BudgEZ.Views"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:model="clr-namespace:BudgEZ.Models"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="MainPage" />
+        Route="LoginPage" />
 
 
     <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems" >
-        <ShellContent Title="Home" ContentTemplate ="{DataTemplate views:HomePage}"></ShellContent>
-        <ShellContent Title="Tools" ContentTemplate ="{DataTemplate views:ToolsPage}"></ShellContent>
-        <ShellContent Title="Settings" ContentTemplate ="{DataTemplate views:SettingsPage}"></ShellContent>
+        <ShellContent Title="Home" Icon="{x:Static model:Icons.Home}" ContentTemplate ="{DataTemplate views:HomePage}"></ShellContent>
+        <ShellContent Title="Tools" Icon="{x:Static model:Icons.Tools}" ContentTemplate ="{DataTemplate views:ToolsPage}"></ShellContent>
+        <ShellContent Title="Settings" Icon="{x:Static model:Icons.Settings}" ContentTemplate ="{DataTemplate views:SettingsPage}"></ShellContent>
         
     </FlyoutItem>
-    
+
+    <ShellContent>
+      
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}"></Button>
+      
+    </ShellContent>
+
 </Shell>
