@@ -7,16 +7,37 @@
              Title="SettingsPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="About us!"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="Caption"
+            TextColor="Black"
+            FontAttributes="Bold"/>
 
 
-        
-            <StackLayout>
-                <Button Text="Sign Out" Clicked ="Button_Clicked"></Button>
-            </StackLayout>
-        
-    
+        <CarouselView>
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item 1</x:String>
+                    <x:String>Item 2</x:String>
+                    <x:String>Item 3</x:String>
+                    <x:String>Item 4</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="10">
+                        <Frame HeightRequest="450" WidthRequest="250">
+                            <Label Text="Aici vom povesti foarte multe despre noi, dar momentan nu am inspiratie" ></Label>
+                           
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <StackLayout>
+            <Button HeightRequest="45" WidthRequest="100" Text="Sign Out" Clicked ="Button_Clicked"></Button>
+        </StackLayout>
+
     </VerticalStackLayout>
 </ContentPage>
